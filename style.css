@@ -1,0 +1,26 @@
+/* Styl kontenera, w którym tekst będzie się przesuwał */
+.marquee-container {
+    width: 100%;                   /* Pełna szerokość okna */
+    overflow: hidden;              /* Ukrywanie tekstu, który wychodzi poza okno */
+    white-space: nowrap;           /* Zapobiega łamaniu tekstu na linie */
+    background-color: #f0f0f0;    /* Kolor tła, można zmienić */
+}
+
+/* Styl dla samego przesuwającego się tekstu */
+.marquee {
+    display: inline-block;         /* Sprawia, że tekst jest traktowany jak pojedynczy element */
+    font-size: 24px;               /* Wielkość czcionki, można dostosować */
+    color: #333;                   /* Kolor tekstu */
+    padding-right: 100%;           /* Dodajemy odstęp na prawej stronie, aby początek tekstu był poza ekranem */
+    animation: marquee-animation 25s linear infinite; /* Animacja przesuwania */
+}
+
+/* Definicja animacji przesuwającego się tekstu */
+@keyframes marquee-animation {
+    0% {
+        transform: translateX(100%); /* Zaczyna po prawej stronie */
+    }
+    100% {
+        transform: translateX(-100%); /* Kończy po lewej stronie */
+    }
+}
